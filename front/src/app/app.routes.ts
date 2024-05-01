@@ -11,7 +11,6 @@ export const AppRoutes: Routes = [
         path: 'home',
         loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule),
         canMatch: [authenticatedGuard]
-
     },
     {
         path: 'login',

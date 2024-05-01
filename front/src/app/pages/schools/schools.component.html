@@ -1,0 +1,23 @@
+<div class="base flex flex-center ">
+    <h1>Escolas</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Salas</th>
+                <th scope="col">Alunos</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr class="table-row" *ngFor="let school of schools , index as i ">
+                <td scope="row">{{i+1}}</td>
+                <td >{{school.name }}</td>
+                <td>{{school.classes?.length}}</td>
+                <td>{{school.students?.length}}</td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>
