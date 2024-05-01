@@ -1,1 +1,69 @@
-{}
+{
+  "students": [
+    {
+      "id": 1,
+      "name": "Aluno 1",
+      "age": 10,
+      "phone": "(11) 1111-1111",
+      "address": {
+        "street": "Rua 1",
+        "number": 1,
+        "city": "Cidade 1",
+        "state": "UF 1",
+        "zipcode": "11111111"
+      },
+      "email": "aluno1@aluno1.com",
+      "schoolId":1,
+      "classId": 1
+    },
+    {
+      "id": "20ff",
+      "name": "Aluno 2",
+      "age": 10,
+      "phone": "(11) 1111-1111",
+      "address": {
+        "street": "Rua 1",
+        "number": 1,
+        "city": "Cidade 1",
+        "state": "UF 1",
+        "zipcode": "11111111"
+      },
+      "email": "aluno1@aluno1.com",
+      "schoolId":1,
+      "classId": 2
+    }
+  ],
+  "classes": [
+    {
+      "id": 1,
+      "variant": "A",
+      "schoolYear": 1,
+      "period": "morning",
+      "schoolId": 1
+    },
+    {
+      "id": 2,
+      "variant": "A",
+      "schoolYear": 1,
+      "period": "morning",
+      "schoolId": 1
+    }
+  ],
+  "schools": [
+    {
+      "id": 1,
+      "name": "Escola 1",
+      "address": {
+        "street": "Rua 1",
+        "number": 1,
+        "city": "Cidade 1",
+        "state": "UF 1",
+        "zipcode": "11111111"
+      },
+      "phone": "(11) 1111-1111",
+      "cnpj": "11111111111111",
+      "schoolYears":[1,2,3,4,5,6,7,8,9,10,11,12],
+      "periods": ["night", "morning", "afternoon"]
+    }
+  ]
+}
