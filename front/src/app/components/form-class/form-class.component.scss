@@ -1,1 +1,6 @@
-@import '../form-school/form-school.component.scss'
+@import 'form';
+
+.schoolYear, .period {
+    width: 50%;
+} 
+
