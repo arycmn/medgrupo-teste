@@ -1,23 +1,24 @@
 <div class="base flex flex-center ">
     <h1>Alunos</h1>
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Nome</th>
-                <th scope="col">Idade</th>
-                <th scope="col">E-mail</th>
-            </tr>
-        </thead>
-        <tbody>
-
-            <tr class="table-row" *ngFor="let student of students , index as i ">
-                <td scope="row">{{i+1}}</td>
-                <td >{{student?.name }}</td>
-                <td>{{calculateAge(student.birthdate)}}</td>
-                <td>{{student?.email}}</td>
-            </tr>
-
-        </tbody>
-    </table>
+    <ng-container *ngIf="students.length > 0">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Idade</th>
+                    <th scope="col">E-mail</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="table-row" *ngFor="let student of students , index as i ">
+                    <td scope="row">{{i+1}}</td>
+                    <td style="user-select: text;" [title]="student.name | titlecase" >{{student.name | titlecase | truncate: 10}}</td>
+                    <td>{{calculateAge(student.birthdate)}}</td>
+                    <td>{{student?.email}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </ng-container>
+    <app-no-data *ngIf="students.length === 0"></app-no-data>
 </div>

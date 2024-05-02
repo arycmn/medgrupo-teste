@@ -32,11 +32,19 @@
             border: 0;
             background-color: transparent;
             border-radius: 16px;
-
+            height: fit-content;
+            text-wrap: nowrap;
             &:hover{
                 color: $primary-color;
                 background-color: $secondary-color;
             }
+
+            .ng-icon{
+                width: 20px;
+                height: 20px;
+            }
+
+
         }
 
     }

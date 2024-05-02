@@ -1,6 +1,5 @@
 import { StudentsService } from './../../common/students.service';
 import { NgForm } from '@angular/forms';
-import { IStudent } from './../../interfaces/IStudent';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ApiService } from '../../services/api.service';
 import { Subscription } from 'rxjs';
@@ -32,7 +31,7 @@ export class FormStudentsComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {}
 
-  refactorClassLabel(variant: string, schoolYear: number) {
+  refactorClassLabel(variant: string, schoolYear: string) {
     
     return `${this.classService.makeOptionsForSchoolYear(schoolYear)} - ${variant}`;
   }

@@ -27,7 +27,7 @@ export class ClassesComponent implements OnInit, OnDestroy {
     return this.classService.makeOptionsForPeriod(period);
   }
 
-  convertSchoolYear = (schoolYear: number) => {
+  convertSchoolYear = (schoolYear: string) => {
     
     return this.classService.makeOptionsForSchoolYear(schoolYear);
 

@@ -37,15 +37,15 @@ export class SchoolService {
   private MakeschoolsYears = (
     ensinoMedio: boolean,
     ensinoFundamental: boolean
-  ): (1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12)[] | [] => {
+  ): ("1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "10" | "11" | "12")[] => {
     if (ensinoMedio && ensinoFundamental) {
-      return [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+      return ["1", "2", "3", "4", "5" , "6", "7", "8", "9", "10", "11", "12"];
     }
     if (ensinoMedio) {
-      return [10, 11, 12];
+      return ["10", "11", "12"];
     }
     if (ensinoFundamental) {
-      return [1, 2, 3, 4, 5, 6, 7, 8, 9];
+      return ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
     }
     return [];
   };

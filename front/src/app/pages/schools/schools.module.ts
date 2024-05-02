@@ -5,23 +5,21 @@ import { RouterModule } from '@angular/router';
 import { SchoolsRoutes } from './schools.routes';
 import { HttpClientModule } from '@angular/common/http';
 import { ApiService } from '../../services/api.service';
-import { NgIconsModule } from '@ng-icons/core';
-import { heroUsers } from '@ng-icons/heroicons/outline';
-import { bootstrapTrash } from '@ng-icons/bootstrap-icons'
 import { FormSchoolComponent } from '../../components/form-school/form-school.component';
 import { FormsModule } from '@angular/forms';
+import { SharedModule } from '../../components/shared/shared.module';
 
 @NgModule({
   declarations: [
     SchoolsComponent,
-    FormSchoolComponent
+    FormSchoolComponent,
   ],
   imports: [
     CommonModule,
     RouterModule.forChild(SchoolsRoutes),
     HttpClientModule,
     FormsModule,
-    NgIconsModule.withIcons({  bootstrapTrash }),
+    SharedModule
   ],
   providers: [ApiService],
 })

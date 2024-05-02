@@ -1,5 +1,4 @@
 import { Component, OnDestroy } from '@angular/core';
-import { ISchool } from '../../interfaces/ISchool';
 import { NgForm } from '@angular/forms';
 import { ApiService } from '../../services/api.service';
 import { Subscription } from 'rxjs';

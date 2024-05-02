@@ -11,6 +11,6 @@ export interface IStudent {
       zipcode: number
     };
     email: string;
-    schoolId:string;
-    classId: string;
+    schoolId:number;
+    classId: number;
   }

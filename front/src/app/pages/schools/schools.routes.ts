@@ -8,7 +8,7 @@ export const SchoolsRoutes: Routes = [
     component: SchoolsComponent,
   },
   {
-    path: 'schools/new',
+    path: 'new',
     component: FormSchoolComponent,
   },
 ];

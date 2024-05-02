@@ -24,8 +24,8 @@ export class StudentsService {
         zipcode: values.zipcode,
       },
       email: values.email,
-      schoolId: values.school,
-      classId: values.class,
+      schoolId: parseInt(values.school),
+      classId: parseInt(values.class),
     };
   }
 

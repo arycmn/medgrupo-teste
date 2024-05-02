@@ -21,11 +21,11 @@ export class FormClassComponent implements OnInit, OnDestroy {
 
   selectedSchoolId: string = '';
   schools: ISchool[] = [];
-  SchoolYears: (1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12)[] = [];
+  SchoolYears: ("1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "10" | "11" | "12")[] = [];
   periods: ('night' | 'morning' | 'afternoon')[] = [];
   classes: IClass[] = [];
 
-  refactorClassLabel(year: number) {
+  refactorClassLabel(year: string) {
     return this.classService.makeOptionsForSchoolYear(year);
   }
 
@@ -41,6 +41,7 @@ export class FormClassComponent implements OnInit, OnDestroy {
         .subscribe((schools) => {
           this.SchoolYears = schools.schoolYears;
           this.periods = schools.periods;
+          console.log(schools);
           this.classes = schools.classes || [];
         })
     );
@@ -59,8 +60,8 @@ export class FormClassComponent implements OnInit, OnDestroy {
     this.subs.forEach((sub) => sub.unsubscribe());
   }
   onSubmit(formValues: NgForm) {
-   this.subs.push( this.apiService.postClass$(this.classService.makeClass(formValues, this.classes)).subscribe(() => {
-      this.router.navigate(['/app']);
+   this.subs.push( this.apiService.postClass$(this.classService.makeClass(formValues, this.classes)).subscribe((values) => {
+      this.router.navigate(['/app', 'classes'], { queryParams: { schoolId: values.schoolId } });
     }))
 
   }

@@ -1,23 +1,26 @@
 <div class="base flex flex-center ">
     <h1>Escolas</h1>
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Nome</th>
-                <th scope="col">Salas</th>
-                <th scope="col">Alunos</th>
-            </tr>
-        </thead>
-        <tbody>
-            <ng-container *ngFor="let school of schools; let i = index">
-                <tr class="table-row"  (click)="onSchoolClick(school)" >
-                  <td scope="row">{{i+1}}</td>
-                  <td>{{school.name}}</td>
-                  <td>{{school.classes?.length}}</td>
-                  <td>{{school.students?.length}}</td>
+    <ng-container *ngIf="schools.length > 0">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Salas</th>
+                    <th scope="col">Alunos</th>
                 </tr>
-              </ng-container>
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                <ng-container *ngFor="let school of schools; let i = index">
+                    <tr class="table-row" (click)="onSchoolClick(school)" >
+                      <td scope="row">{{i+1}}</td>
+                      <td>{{school.name}}</td>
+                      <td>{{school.classes?.length}}</td>
+                      <td>{{school.students?.length}}</td>
+                    </tr>
+                </ng-container>
+            </tbody>
+        </table>
+    </ng-container>
+    <app-no-data *ngIf="schools.length === 0"></app-no-data>
 </div>

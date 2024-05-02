@@ -6,6 +6,9 @@ import { HomeRoutes } from './home.routes';
 import { HeaderComponent } from '../../components/header/header.component';
 import { FooterComponent } from '../../components/footer/footer.component';
 import { FormsModule } from '@angular/forms';
+import { NgIconsModule } from '@ng-icons/core';
+import { bootstrapHouseAdd, bootstrapPersonPlusFill } from '@ng-icons/bootstrap-icons';
+import { heroAcademicCap } from '@ng-icons/heroicons/outline';
 
 
 
@@ -13,13 +16,13 @@ import { FormsModule } from '@angular/forms';
   declarations: [
     HomeComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
   ],
   imports: [
     CommonModule,
     RouterModule.forChild(HomeRoutes),
-    FormsModule
-
+    FormsModule,
+    NgIconsModule.withIcons({  bootstrapHouseAdd,heroAcademicCap,bootstrapPersonPlusFill }),
   ]
 })
 export class HomeModule { }

@@ -8,13 +8,13 @@ import { IClass } from '../interfaces/IClass';
 export class ClassService {
   constructor() {}
 
-  public makeOptionsForSchoolYear(schoolYear: number): string {
+  public makeOptionsForSchoolYear(schoolYear: string): string {
     switch (schoolYear) {
-      case 10:
+      case "10":
         return '1o EM';
-      case 11:
+      case "11":
         return '2o EM';
-      case 12:
+      case "12":
         return '3o EM';
       default:
         return `${schoolYear}o EF`;
@@ -35,10 +35,12 @@ export class ClassService {
   }
 
   public getLastClass(classes: IClass[], SchoolYear: string): string {
+    console.log(classes, SchoolYear)
     const ordenedClasses = classes
-      .filter((c) => c.schoolYear === parseInt(SchoolYear))
+      .filter((c) => (c.schoolYear) === SchoolYear)
       .sort((a, b) => b.variant.charCodeAt(0) - a.variant.charCodeAt(0));
 
+      console.log(ordenedClasses);
     return ordenedClasses.length > 0 ? String.fromCharCode(ordenedClasses[0].variant.charCodeAt(0)+1) : 'A';
   }
 
@@ -48,7 +50,7 @@ export class ClassService {
       variant: this.getLastClass(classes, String(classData.schoolYear)),
       schoolYear: classData.schoolYear,
       period: classData.period,
-      schoolId: classData.school,
+      schoolId: parseInt(classData.school),
     };
   }
 }
