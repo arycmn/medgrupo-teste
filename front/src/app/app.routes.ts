@@ -4,6 +4,11 @@ import { authenticatedGuard } from './guards/authenticated.guard';
 export const AppRoutes: Routes = [
 
     {
+        path: '',
+        redirectTo: 'app',
+        pathMatch: 'full'
+    },
+    {
         path: 'app',
         loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule),
         canMatch: [authenticatedGuard]
