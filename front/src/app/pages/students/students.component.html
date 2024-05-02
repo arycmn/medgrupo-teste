@@ -1,0 +1,23 @@
+<div class="base flex flex-center ">
+    <h1>Alunos</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Idade</th>
+                <th scope="col">E-mail</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr class="table-row" *ngFor="let student of students , index as i ">
+                <td scope="row">{{i+1}}</td>
+                <td >{{student?.name }}</td>
+                <td>{{calculateAge(student.birthdate)}}</td>
+                <td>{{student?.email}}</td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>

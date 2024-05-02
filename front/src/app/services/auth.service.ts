@@ -18,7 +18,7 @@ export class AuthService {
   public login(formValue : IformLogin){
     if(formValue.email === 'admin@admin.com' && formValue.password === 'admin'){
       localStorage.setItem('auth', 'true');
-      this.router.navigate(['/home']);
+      this.router.navigate(['/app']);
     }
   }
 

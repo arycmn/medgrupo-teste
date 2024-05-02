@@ -16,7 +16,7 @@ import { FormsModule } from '@angular/forms';
   imports: [
     FormsModule,
     CommonModule,
-    RouterModule.forChild(LoginRoutes)
+    RouterModule.forChild(LoginRoutes),
   ]
 })
 export class LoginModule { }

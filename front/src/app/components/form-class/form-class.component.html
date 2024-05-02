@@ -1,0 +1,62 @@
+<h1>Nova Sala</h1>
+<form
+  class="form-school flex"
+  #formClass="ngForm"
+  (ngSubmit)="onSubmit(formClass)"
+>
+  <div class="form-group">
+    <label for="school">Escola</label>
+    <select
+      class="form-control form-select"
+      (ngModelChange)="onChangeSchool($event)"
+      name="school"
+      ngModel
+      id="school"
+      placeholder="Nome da escola"
+    >
+      <option *ngFor="let school of schools" value="{{ school.id }}">
+        {{ school.name }}
+      </option>
+    </select>
+  </div>
+
+  <div class="row-form">
+    <div class="form-group">
+      <label for="schoolYear">Ano escolar</label>
+      <select
+        class="form-control form-select"
+        [disabled]="SchoolYears.length === 0"
+        name="schoolYear"
+        ngModel
+        id="schoolYear"
+        placeholder="Nome da escola"
+      >
+        <option *ngFor="let year of SchoolYears" value="{{ year }}">
+          {{ refactorClassLabel(year) }}
+        </option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="period">Período</label>
+      <select
+        class="form-control form-select"
+        [disabled]="periods.length === 0"
+        name="period"
+        ngModel
+        id="period"
+        placeholder="Nome da escola"
+      >
+        <option *ngFor="let period of periods" value="{{ period }}">
+          {{ refactorPeriodLabel(period) }}
+        </option>
+      </select>
+    </div>
+  </div>
+
+  <div class="buttons-container">
+    <button type="button" class="btn btn-secondary" (click)="cancel()">
+      Cancelar
+    </button>
+    <button type="submit" class="btn btn-primary">Cadastrar</button>
+  </div>
+</form>

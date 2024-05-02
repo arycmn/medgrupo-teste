@@ -1,0 +1,26 @@
+
+<div class="base flex flex-center ">
+    <h1>Salas</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Ano</th>
+                <th scope="col">Periodo</th>
+                <th scope="col">Alunos</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <ng-container *ngFor="let class of classes; index as i">
+                <tr class="table-row" (click)="onClassClick(class)" >
+                    <td scope="row">{{i+1}}</td>
+                    <td >{{convertSchoolYear(class.schoolYear)+' - '+class.variant}}</td>
+                    <td>{{convertPeriod(class.period)}}</td>
+                    <td>{{class.students?.length}}</td>
+                </tr>
+            </ng-container>
+
+        </tbody>
+    </table>
+</div>

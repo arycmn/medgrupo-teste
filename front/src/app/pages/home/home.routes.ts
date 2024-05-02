@@ -9,7 +9,20 @@ export const HomeRoutes: Routes = [
         children: [
             {
                 path: '',
+                redirectTo: 'schools',
+                pathMatch: 'full'
+            },
+            {
+                path: 'schools',
                 loadChildren: () => import('../schools/schools.module').then(m => m.SchoolsModule)
+            },
+            {
+                path: 'classes',
+                loadChildren: () => import('../classes/classes.module').then(m => m.ClassesModule)
+            },
+            {
+                path: 'students',
+                loadChildren: () => import('../students/students.module').then(m => m.StudentsModule)
             }
         ]
     },

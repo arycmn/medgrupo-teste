@@ -1,0 +1,183 @@
+<h1>Novo Aluno</h1>
+<form
+  class="form-school flex"
+  #formStudents="ngForm"
+  (ngSubmit)="onSubmit(formStudents)"
+>
+  <div class="form-group">
+    <label for="name">Nome</label>
+    <input
+      name="name"
+      ngModel
+      type="text"
+      class="form-control"
+      id="name"
+      placeholder="Nome do aluno"
+    />
+  </div>
+
+  <div class="row-form">
+    <div class="form-group">
+      <label for="birthdate">Data de nascimento</label>
+      <input
+        name="birthdate"
+        ngModel
+        type="date"
+        class="form-control"
+        id="birthdate"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="phone">Telefone</label>
+      <input
+        name="phone"
+        ngModel
+        type="text"
+        class="form-control"
+        id="phone"
+        placeholder="Telefone"
+      />
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="email">E-mail</label>
+    <input
+      name="email"
+      ngModel
+      type="text"
+      class="form-control"
+      id="email"
+      placeholder="E-mail"
+    />
+  </div>
+  <div class="row-form">
+    <div class="form-group street">
+      <label for="street">Rua</label>
+      <input
+        name="street"
+        ngModel
+        type="text"
+        class="form-control"
+        id="street"
+        placeholder="Rua"
+      />
+    </div>
+    <div class="form-group number">
+      <label for="number">Número</label>
+      <input
+        name="number"
+        ngModel
+        type="text"
+        class="form-control"
+        id="number"
+        placeholder="Número"
+      />
+    </div>
+  </div>
+  <div class="row-form">
+    <div class="form-group city">
+      <label for="city">Cidade</label>
+      <input
+        name="city"
+        ngModel
+        type="text"
+        class="form-control"
+        id="city"
+        placeholder="Cidade"
+      />
+    </div>
+    <div class="form-group state">
+      <label for="state">UF</label>
+      <input
+        name="state"
+        ngModel
+        type="text"
+        class="form-control"
+        id="state"
+        placeholder="UF"
+      />
+    </div>
+  </div>
+  <div class="row-form">
+    <div class="form-group zipcode">
+      <label for="zipcode">CEP</label>
+      <input
+        name="zipcode"
+        ngModel
+        type="text"
+        class="form-control"
+        id="zipcode"
+        placeholder="CEP"
+      />
+    </div>
+    <div class="form-group complement">
+      <label for="complement">Complemento</label>
+      <input
+        name="complement"
+        ngModel
+        type="text"
+        class="form-control"
+        id="complement"
+        placeholder="Complemento"
+      />
+    </div>
+  </div>
+  <div class="row-form">
+    <div class="form-group">
+      <label for="period">Período</label>
+      <select
+        class="form-control form-select"
+        name="period"
+        ngModel
+        id="period"
+        placeholder="Nome da escola"
+        (ngModelChange)="onChangePeriod($event)"
+      >
+        <option value="morning">Manhã</option>
+        <option value="afternoon">Tarde</option>
+        <option value="night">Noite</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="school">Escola</label>
+      <select
+        class="form-control form-select"
+        (ngModelChange)="onChangeSchool($event)"
+        [(ngModel)]="selectedSchoolId"
+        name="school"
+        ngModel
+        id="school"
+        placeholder="Nome da escola"
+        [disabled]="schools.length === 0"
+      >
+        <option *ngFor="let school of schools" value="{{ school.id }}">
+          {{ school.name }}
+        </option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="class">Sala</label>
+    <select
+      class="form-control form-select"
+      [(ngModel)]="selectedClassId"
+      name="class"
+      ngModel
+      id="class"
+      [disabled]="classes.length === 0"
+    >
+      <option *ngFor="let class of classes" value="{{ class.id }}">
+        {{ refactorClassLabel(class.variant, class.schoolYear) }}
+      </option>
+    </select>
+  </div>
+
+  <div class="buttons-container">
+    <button type="button" class="btn btn-secondary" (click)="cancel()">
+      Cancelar
+    </button>
+    <button type="submit" class="btn btn-primary">Cadastrar</button>
+  </div>
+</form>

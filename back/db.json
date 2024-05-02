@@ -1,9 +1,10 @@
 {
   "students": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Aluno 1",
       "age": 10,
+      "birthdate": "1991-09-21",
       "phone": "(11) 1111-1111",
       "address": {
         "street": "Rua 1",
@@ -13,8 +14,8 @@
         "zipcode": "11111111"
       },
       "email": "aluno1@aluno1.com",
-      "schoolId":1,
-      "classId": 1
+      "schoolId": "1",
+      "classId": "1"
     },
     {
       "id": "20ff",
@@ -29,29 +30,73 @@
         "zipcode": "11111111"
       },
       "email": "aluno1@aluno1.com",
-      "schoolId":1,
-      "classId": 2
+      "schoolId": "1",
+      "classId": "2"
+    },
+    {
+      "name": "teste 01",
+      "birthdate": "2024-05-15",
+      "phone": "949858242",
+      "address": {
+        "street": "AV.JOSE MARIA SOLIDO",
+        "number": "130",
+        "city": "SANTO ANDRE",
+        "state": "SP",
+        "zipcode": "09091-025"
+      },
+      "email": "juliomelo158@gmail.com",
+      "schoolId": "1",
+      "classId": "4",
+      "id": "w6PxvL9"
     }
   ],
   "classes": [
     {
-      "id": 1,
+      "id": "1",
       "variant": "A",
       "schoolYear": 1,
       "period": "morning",
-      "schoolId": 1
+      "schoolId": "1"
     },
     {
-      "id": 2,
-      "variant": "A",
-      "schoolYear": 1,
+      "id": "2",
+      "variant": "B",
+      "schoolYear": 4,
+      "period": "afternoon",
+      "schoolId": "1"
+    },
+    {
+      "id": "3",
+      "variant": "C",
+      "schoolYear": 4,
       "period": "morning",
-      "schoolId": 1
+      "schoolId": "1"
+    },
+    {
+      "id": "4",
+      "variant": "D",
+      "schoolYear": 4,
+      "period": "morning",
+      "schoolId": "1"
+    },
+    {
+      "variant": "E",
+      "schoolYear": "4",
+      "period": "morning",
+      "schoolId": "1",
+      "id": "50ecd36"
+    },
+    {
+      "variant": "A",
+      "schoolYear": "5",
+      "period": "night",
+      "schoolId": "1",
+      "id": "5MuF2_B"
     }
   ],
   "schools": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Escola 1",
       "address": {
         "street": "Rua 1",
@@ -62,8 +107,25 @@
       },
       "phone": "(11) 1111-1111",
       "cnpj": "11111111111111",
-      "schoolYears":[1,2,3,4,5,6,7,8,9,10,11,12],
-      "periods": ["night", "morning", "afternoon"]
+      "schoolYears": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "periods": [
+        "night",
+        "morning",
+        "afternoon"
+      ]
     }
   ]
 }

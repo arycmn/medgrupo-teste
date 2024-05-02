@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { HomeRoutes } from './home.routes';
 import { HeaderComponent } from '../../components/header/header.component';
 import { FooterComponent } from '../../components/footer/footer.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -16,7 +17,9 @@ import { FooterComponent } from '../../components/footer/footer.component';
   ],
   imports: [
     CommonModule,
-    RouterModule.forChild(HomeRoutes)
+    RouterModule.forChild(HomeRoutes),
+    FormsModule
+
   ]
 })
 export class HomeModule { }
